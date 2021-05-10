@@ -5,22 +5,36 @@ namespace Projeto1
     {
         private int posX, posY;
 
-        private bool playerA; //se true então pertecen ao jogador A, se false pertence B
+        private bool player; //se true então pertecen ao jogador A, se false pertence B
 
         
-        public Peca(bool playerA)
+        public Peca(bool player)
         {
             //posicao inical da peca ("fora tabuleiro")
-            this.posX = 1;
-            this.posY = 5;
+            if(player == true)
+            {
+                this.posX = 0;
+                this.posY = 4;
+            }
+            else if(player == false)
+            {
+                this.posX = 2;
+                this.posY = 4;
+            }
+            
 
             //pertence ao jogadorA?? B?
-            this.playerA = playerA;
+            this.player = player;
         }
 
         public int[] GetPos()
         {
             return (posX, posY);
+        }
+
+        public bool GetPlayer()
+        {
+            return player;
         }
         
     }
