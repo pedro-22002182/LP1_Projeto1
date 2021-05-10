@@ -8,9 +8,25 @@ namespace Projeto1
 
         public Tabuleiro()
         {
-            this.tabuleiro = new int [3][8];
-            this.pecas = new Peca[14];
+            this.tabuleiro = new int [2][7];
+            this.pecas = new Peca[13];
+
+            for(int i = 0; i < pecas.Length(); i++)
+            {
+                if(i <= 7)
+                {
+                    //criacao 7 pecas jogador A
+                    pecas[i] = new Peca(true);
+                }
+                else
+                {
+                    //criacao 7 pecas jogador B
+                    pecas[i] = new Peca(false);
+                }
+            }
+
         }
+
 
         public bool CheckFlower(int x, int y)
         {
@@ -43,9 +59,9 @@ namespace Projeto1
             int xPeca = peca.GetPos()[0];
             int yPeca = peca.GetPos()[1];
 
-            if(xPeca == 0)
+            if(xPeca == 0 && yPeca == 0)
             {
-
+                
             }
         }
 
