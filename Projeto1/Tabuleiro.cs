@@ -2,9 +2,16 @@ namespace Projeto1
 {
     public class Tabuleiro
     {
-        private int[][] tabuleiro = new int[3][8];  
+        private int[][] tabuleiro; 
 
-        private Peca[] pecas = new Peca[14];
+        private Peca[] pecas;
+
+        public Tabuleiro()
+        {
+            this.tabuleiro = new int [3][8];
+            this.pecas = new Peca[14];
+
+        }
     }
 
 }
