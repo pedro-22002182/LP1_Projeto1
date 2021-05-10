@@ -17,6 +17,11 @@ namespace Projeto1
             //pertence ao jogadorA?? B?
             this.playerA = playerA;
         }
+
+        public int[] GetPos()
+        {
+            return (posX, posY);
+        }
         
     }
 }
