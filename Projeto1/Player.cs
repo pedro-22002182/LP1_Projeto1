@@ -9,5 +9,10 @@ namespace Projeto1
         {
             this.score = 0;
         }
+
+        public void plusPontos()
+        {
+            score += 1;
+        }
     }
 }

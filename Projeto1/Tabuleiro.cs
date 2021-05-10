@@ -54,14 +54,49 @@ namespace Projeto1
             return false;
         }
 
-        public void movimentoPeca(Peca peca, int passos)
+        public void movimentoPeca(Peca peca, int passos, Player jogador)
         {
             int xPeca = peca.GetPos()[0];
             int yPeca = peca.GetPos()[1];
 
-            if(xPeca == 0 && yPeca == 0)
+
+            for(int i = 0; i < passos; i++)
             {
-                
+                //check vitoria Peca
+                if(xPeca == 0 && yPeca == 5)
+                {
+                    //ponto DO
+                    if(passos == 0)
+                    {
+                        jogador.plusPontos();
+                    }
+                    else
+                    {
+                        xPeca = peca.GetPos()[0];
+                        yPeca = peca.GetPos()[1];
+                    }
+                }
+
+
+                if(xPeca == 0 && yPeca > 0)
+                {
+                    yPeca -= 1;
+                }
+
+                if(xPeca == 0 && yPeca == 0)
+                {
+                    xPeca += 1;
+                }
+
+                if(xPeca == 1 && yPeca < 7)
+                {
+                    yPeca += 1;
+                }
+
+                if(xPeca == 1 && yPeca == 7)
+                {
+                    xPeca -= 1;
+                }
             }
         }
 
