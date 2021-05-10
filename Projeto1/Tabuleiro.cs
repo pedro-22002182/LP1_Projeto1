@@ -27,7 +27,7 @@ namespace Projeto1
         }
 
 
-        private bool CheckFlower(int x, int y)
+        public bool CheckFlower(int x, int y)
         {
             if(x == 0 && y == 0)
             {
@@ -53,7 +53,24 @@ namespace Projeto1
             return false;
         }
 
+        public void movimentoPeca(Peca peca, int passos)
+        {
+            int xPeca = peca.GetPos()[0];
+            int yPeca = peca.GetPos()[1];
 
+            if(xPeca == 0)
+            {
+                
+            }
+        }
+
+
+
+        public void checkCasaVazia(int x, int y)
+        {
+
+
+        }
 
     }
 }

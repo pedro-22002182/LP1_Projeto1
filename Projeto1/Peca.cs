@@ -18,5 +18,9 @@ namespace Projeto1
             this.playerA = playerA;
         }
         
+        public int[] GetPos()
+        {
+            return (posX, posY);
+        }
     }
 }
