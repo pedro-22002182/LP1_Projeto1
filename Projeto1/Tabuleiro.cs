@@ -30,7 +30,6 @@ namespace Projeto1
         public void moverPeca (Peca peca,int passos, Player jogador) 
         {
             peca.movimentoPeca(passos, jogador);
-            
         }
 
 
