@@ -99,11 +99,7 @@ namespace Projeto1
             }
         }
         
-        public void checkCasaVazia(int x, int y)
-        {
-
-
-        }
+    
     }
 
 }

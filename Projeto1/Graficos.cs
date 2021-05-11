@@ -1,13 +1,13 @@
 using System;
 namespace Projeto1
 {
-    public class Interface
+    public class Graficos
     {
         Tabuleiro tabuleiro;
         Player playerA;
         Player playerB;
 
-        public Interface (Tabuleiro tabuleiro, Player playerA ,Player playerB)
+        public Graficos (Tabuleiro tabuleiro, Player playerA ,Player playerB)
         {
             this.tabuleiro = tabuleiro;
             this.playerA = playerA;

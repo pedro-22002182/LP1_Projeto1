@@ -6,7 +6,16 @@ namespace Projeto1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tabuleiro tabuleiro = new Tabuleiro();
+            Player playerA = new Player();
+            Player playerB = new Player();
+            Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
+
+
+            Console.WriteLine($" {graficos.showMap()}");
+
+            
+            
         }
     }
 }
