@@ -59,7 +59,10 @@ namespace Projeto1
             return false;
         }
 
-        
+        public int[,] getMap()
+        {
+            return tabuleiro;
+        }
 
 
 
