@@ -65,7 +65,40 @@ namespace Projeto1
         }
 
 
+        public void atualizarMap()
+        {
+            for(int x = 0; x < tabuleiro.GetLength(0); x++)
+            {
+                for(int y = 0; y < tabuleiro.GetLength(1); y++)
+                {
+                    //Casa Vazia
+                    tabuleiro[x,y] = 0;
 
+                    //Existe flor?
+                    if(CheckFlower(x,y) == true)
+                    {
+                        tabuleiro[x,y] = 3;
+                    }
+
+                    //Existe Jogador
+                    for(int p = 0; p < pecas.Length; p++)
+                    {
+                        if(pecas[p].GetPos()[0] == x && pecas[p].GetPos()[1] == y)
+                        {
+                            if(pecas[p].GetPlayer() == true)
+                            {
+                                tabuleiro[x,y] = 1;
+                            }
+                            else
+                            {
+                                tabuleiro[x,y] = 2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
         public void checkCasaVazia(int x, int y)
         {
 
