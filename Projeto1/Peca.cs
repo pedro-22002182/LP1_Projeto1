@@ -29,7 +29,8 @@ namespace Projeto1
 
         public int[] GetPos()
         {
-            return (posX, posY);
+            int[] pos = new int[]{posX, posY};
+            return pos;
         }
 
         public bool GetPlayer()

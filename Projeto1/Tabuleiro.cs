@@ -2,16 +2,16 @@ namespace Projeto1
 {
     public class Tabuleiro
     {
-        private int[][] tabuleiro; 
+        private int[,] tabuleiro; 
 
         private Peca[] pecas;
 
         public Tabuleiro()
         {
-            this.tabuleiro = new int [2][7];
+            this.tabuleiro = new int [2,7];
             this.pecas = new Peca[13];
 
-            for(int i = 0; i < pecas.Length(); i++)
+            for(int i = 0; i < pecas.Length; i++)
             {
                 if(i <= 7)
                 {
