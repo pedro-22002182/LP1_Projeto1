@@ -12,10 +12,7 @@ namespace Projeto1
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
 
 
-            Console.WriteLine($" {graficos.showMap()}");
-
-            
-            
+            graficos.showMap();
         }
     }
 }
