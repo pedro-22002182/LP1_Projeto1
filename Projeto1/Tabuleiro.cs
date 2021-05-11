@@ -27,6 +27,12 @@ namespace Projeto1
 
         }
 
+        public void moverPeca (Peca peca,int passos, Player jogador) 
+        {
+            peca.movimentoPeca(passos, jogador);
+            
+        }
+
 
         public bool CheckFlower(int x, int y)
         {
@@ -54,102 +60,7 @@ namespace Projeto1
             return false;
         }
 
-        public void movimentoPeca(Peca peca, int passos, Player jogador)
-        {
-            int xPeca = peca.GetPos()[0];
-            int yPeca = peca.GetPos()[1];
-
-            //get jogador
-            bool player = peca.GetPlayer();
-
-
-            for(int i = 0; i < passos; i++)
-            {
-                //se jogadorA
-                if(player == true)
-                {
-                    //check vitoria Peca
-                    if(xPeca == 0 && yPeca == 5)
-                    {
-                        //ponto DO
-                        if(passos == 0)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xPeca = peca.GetPos()[0];
-                            yPeca = peca.GetPos()[1];
-                        }
-                    }
-
-                    if(xPeca == 0 && yPeca > 0)
-                    {
-                        yPeca -= 1;
-                    }
-
-                    if(xPeca == 0 && yPeca == 0)
-                    {
-                        xPeca += 1;
-                    }
-
-                    if(xPeca == 1 && yPeca < 7)
-                    {
-                        yPeca += 1;
-                    }
-
-                    if(xPeca == 1 && yPeca == 7)
-                    {
-                        xPeca -= 1;
-                    }
-                }
-                
-                //se jogadorB
-                if(player == false)
-                {
-                    //check vitoria Peca
-                    if(xPeca == 2 && yPeca == 5)
-                    {
-                        //ponto DO
-                        if(passos == 0)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xPeca = peca.GetPos()[0];
-                            yPeca = peca.GetPos()[1];
-                        }
-                    }
-
-                    //terceira linha até chegar ao topo
-                    if(xPeca == 2 && yPeca > 0)
-                    {
-                        yPeca -= 1;
-                    }
-
-                    //se tiver no canto direito superior
-                    if(xPeca == 2 && yPeca == 0)
-                    {
-                        xPeca -= 1;
-                    }
-
-                    //se tiver linha meio
-                    if(xPeca == 1 && yPeca < 7)
-                    {
-                        yPeca += 1;
-                    }
-
-                    //se tiver linha meio e na casa 7
-                    if(xPeca == 1 && yPeca == 7)
-                    {
-                        xPeca += 1;
-                    }
-                }
-            }
-        }
+        
 
 
 
