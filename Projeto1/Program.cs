@@ -11,8 +11,9 @@ namespace Projeto1
             Player playerB = new Player();
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
 
-
+            graficos.printMenu();
             graficos.showMap();
+            
         }
     }
 }
