@@ -22,8 +22,17 @@ namespace Projeto1
             {
                 for(int y = 0; y < tabuleiro.getMap().GetLength(1); y++)
                 {
-                    Console.Write(tabuleiro.getMap()[x,y]);
+                    if(tabuleiro.getMap()[x,y] == 9)
+                    {
+                        Console.Write(" ");
+                    }  
+                    else
+                    {
+                        Console.Write(tabuleiro.getMap()[x,y]);
+                    }
+                    
                 }
+
                 Console.Write("\n");
             }
 
