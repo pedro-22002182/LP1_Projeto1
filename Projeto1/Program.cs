@@ -40,7 +40,7 @@ namespace Projeto1
                 Console.ReadLine();
                 int numeroPassos = lancarDados();
                 
-                Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço")
+                Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço");
                 string escolha = Console.ReadLine();
 
                 if(escolha == " ")
@@ -63,15 +63,7 @@ namespace Projeto1
                     }
 
                 }
-                else if()
-                {
-
-                }
-                else
-                {
-
-                }
-
+        
             }
             
         }
