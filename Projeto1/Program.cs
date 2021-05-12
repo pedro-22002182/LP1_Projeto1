@@ -15,8 +15,7 @@ namespace Projeto1
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
 
 
-            graficos.showMap();
-<<<<<<< HEAD
+            graficos.regras();
 
             //Game loop
             bool acabou = false;
@@ -67,8 +66,6 @@ namespace Projeto1
         
             }
             
-=======
->>>>>>> parent of 6063b24 (Criar menu inicial)
         }
 
         static int lancarDados()

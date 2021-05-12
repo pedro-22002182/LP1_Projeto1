@@ -27,7 +27,6 @@ namespace Projeto1
                     if(tabuleiro.getMap()[x,y] == 9)
                     {
                         Console.Write(" ");
-<<<<<<< HEAD
                     } 
                     //Flwoer Tiles
                     else if(tabuleiro.getMap()[x,y] == 3) 
@@ -35,10 +34,6 @@ namespace Projeto1
                         Console.Write("*");
                     }
                     else 
-=======
-                    }  
-                    else
->>>>>>> parent of 6063b24 (Criar menu inicial)
                     {
                         Console.Write(tabuleiro.getMap()[x,y]);
                     }
@@ -47,11 +42,12 @@ namespace Projeto1
 
                 Console.Write("\n");
             }
-
-            
-
         }
 
+        public void regras()
+        {
+            
+        }
 
     }
 
