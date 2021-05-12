@@ -37,13 +37,46 @@ namespace Projeto1
 
                 Console.WriteLine("Para lançar os dados clica no enter");
                 
-                string autorizao = Console.ReadLine();
+                Console.ReadLine();
+                int numeroPassos = lancarDados();
                 
+                Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço")
+                string escolha = Console.ReadLine();
+
+                if(escolha == " ")
+                {
+                    if(turno == true)
+                    {
+                        if(tabuleiro.getMap()[0,4] == 1)
+                        {
+                            Peca pecaMexer = tabuleiro.pegaPeca(0,4);
+                            tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA);
+                        }
+                    }
+                    else
+                    {
+                        if(tabuleiro.getMap()[2,4] == 1)
+                        {
+                            Peca pecaMexer = tabuleiro.pegaPeca(2,4);
+                            tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB);
+                        }
+                    }
+
+                }
+                else if()
+                {
+
+                }
+                else
+                {
+
+                }
+
             }
             
         }
 
-        public int LançarDados()
+        static int lancarDados()
         {
             Random numAleatorio = new Random();
             int valorInteiro = numAleatorio.Next(0,5);
