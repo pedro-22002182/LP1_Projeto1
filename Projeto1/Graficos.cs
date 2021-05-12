@@ -20,12 +20,15 @@ namespace Projeto1
             //reading x
             for(int x = 0; x < tabuleiro.getMap().GetLength(0); x++)
             {
+                //reading y
                 for(int y = 0; y < tabuleiro.getMap().GetLength(1); y++)
                 {
+                    //empty spaces
                     if(tabuleiro.getMap()[x,y] == 9)
                     {
                         Console.Write(" ");
                     } 
+                    //Flwoer Tiles
                     else if(tabuleiro.getMap()[x,y] == 3) 
                     {
                         Console.Write("*");

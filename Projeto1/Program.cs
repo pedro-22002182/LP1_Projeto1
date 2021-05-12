@@ -6,7 +6,10 @@ namespace Projeto1
     {
         static void Main(string[] args)
         {
+            //creates board
             Tabuleiro tabuleiro = new Tabuleiro();
+
+            //cria dois jogadores e chama graficos com info tabuleiro e players A e B
             Player playerA = new Player();
             Player playerB = new Player();
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);

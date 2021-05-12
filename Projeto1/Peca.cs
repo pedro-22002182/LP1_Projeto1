@@ -26,6 +26,8 @@ namespace Projeto1
             //pertence ao jogadorA?? B?
             this.player = player;
         }
+        
+        //TL;DR: move a peça em direçao x y + ou - dependendo da casa em que passar
         public void movimentoPeca (int passos, Player jogador)
         {
             int xnovo = posX;
@@ -51,7 +53,8 @@ namespace Projeto1
                             ynovo = posY;
                         }
                     }
-
+                    
+                    //Orientaçao das pecas no board
                     if(xnovo == 0 && ynovo > 0)
                     {
                         ynovo -= 1;
