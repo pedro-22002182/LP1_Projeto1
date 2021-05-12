@@ -110,7 +110,8 @@ namespace Projeto1
                     }
                 }
             }
-
+            //so para tentar resolver
+            
             tabuleiro[0,4] = 9;
             tabuleiro[2,4] = 9;
             tabuleiro[0,5] = 9;
