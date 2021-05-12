@@ -28,21 +28,27 @@ namespace Projeto1
 
             while (acabou == false)
             {
+                //mostrar tabuleiro
                 graficos.showMap();
+
+                //mostrar de quem é a vez
                 if(turno == true) 
                     Console.WriteLine("É a vez do playerA");
                 else
                     Console.WriteLine("É a vez do playerB");
 
 
+                //Lancar os dados de forma automatica
                 Console.WriteLine("Para lançar os dados clica no enter");
-                
                 Console.ReadLine();
                 int numeroPassos = lancarDados();
                 
+                //pedir acao ao jogador
                 Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço");
                 string escolha = Console.ReadLine();
+                char[] escolhaArray = escolha.ToCharArray();
 
+                //caso mexer peca na base
                 if(escolha == " ")
                 {
                     if(turno == true)
@@ -50,7 +56,9 @@ namespace Projeto1
                         if(tabuleiro.getMap()[0,4] == 1)
                         {
                             Peca pecaMexer = tabuleiro.pegaPeca(0,4);
-                            tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA);
+                            tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
+                            //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+                            //caso contrario dizer e voltar ciclo
                         }
                     }
                     else
@@ -59,10 +67,49 @@ namespace Projeto1
                         {
                             Peca pecaMexer = tabuleiro.pegaPeca(2,4);
                             tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB);
+                            //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+                            //caso contrario dizer e voltar ciclo
+                        }
+                    }
+                }
+                else
+                {
+                    //verificar se o input dado tem dois numeros like "1_2"
+                    bool primIsNumero = false;
+                    bool segIsNumero = false;
+
+                    for(int i = 0; i <= 9; i++)
+                    {
+                        if(escolhaArray[0] == (char)i)
+                        {
+                            primIsNumero = true;
+                        }
+
+                        if(escolhaArray[2] == (char)i)
+                        {
+                            segIsNumero = true;
                         }
                     }
 
+                    //se os dois forem numeros
+                    if(segIsNumero == true && primIsNumero == true)
+                    {
+                        //verificar posicao se existe peca
+                        //verificar se pode mexer
+
+                        //se tudo bem, entao a peca mexe, verifica se há ponto e troca jogador e o ciclo volta atras
+
+
+                    }
+                    //se naõ forem, pedir dados novamente (criar ciclo while nisto)
+                    else
+                    {
+
+                    }
+
+                    //verificar se alguem vence
                 }
+
         
             }
             
