@@ -1,3 +1,5 @@
+using System;
+
 namespace Projeto1
 {
     public class Tabuleiro
@@ -8,7 +10,7 @@ namespace Projeto1
 
         public Tabuleiro()
         {
-            this.tabuleiro = new int [2,7];
+            this.tabuleiro = new int [3,8];
             this.pecas = new Peca[13];
 
             for(int i = 0; i < pecas.Length; i++)
@@ -25,6 +27,7 @@ namespace Projeto1
                 }
             }
 
+            atualizarMap();
         }
 
         public void moverPeca (Peca peca,int passos, Player jogador) 
@@ -110,12 +113,7 @@ namespace Projeto1
                     }
                 }
             }
-            //so para tentar resolver
-            
-            tabuleiro[0,4] = 9;
-            tabuleiro[2,4] = 9;
-            tabuleiro[0,5] = 9;
-            tabuleiro[2,5] = 9;
+
         }       
         
     
