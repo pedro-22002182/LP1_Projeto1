@@ -33,6 +33,12 @@ namespace Projeto1
                     Console.WriteLine("É a vez do playerA");
                 else
                     Console.WriteLine("É a vez do playerB");
+
+
+                Console.WriteLine("Para lançar os dados clica no enter");
+                
+                string autorizao = Console.ReadLine();
+                
             }
             
         }
@@ -44,9 +50,6 @@ namespace Projeto1
 
             Console.WriteLine($" O numero é {valorInteiro}");
             return valorInteiro;
-
-            
-
         }
 
 
