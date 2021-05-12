@@ -14,8 +14,9 @@ namespace Projeto1
             Player playerB = new Player();
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
 
-            graficos.printMenu();
+
             graficos.showMap();
+<<<<<<< HEAD
 
             //Game loop
             bool acabou = false;
@@ -42,7 +43,6 @@ namespace Projeto1
                 
                 Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço");
                 string escolha = Console.ReadLine();
-                char[] escolhaArray = escolha.ToCharArray();
 
                 if(escolha == " ")
                 {
@@ -64,13 +64,11 @@ namespace Projeto1
                     }
 
                 }
-                else if(escolhaArray[0] != ' ')
-                {
-                    Console.WriteLine("ERRROOOOOOOOOO");
-                }
-               
+        
             }
             
+=======
+>>>>>>> parent of 6063b24 (Criar menu inicial)
         }
 
         static int lancarDados()
