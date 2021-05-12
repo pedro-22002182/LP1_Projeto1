@@ -8,7 +8,7 @@ namespace Projeto1
 
         public Tabuleiro()
         {
-            this.tabuleiro = new int [3,8];
+            this.tabuleiro = new int [2,7];
             this.pecas = new Peca[13];
 
             for(int i = 0; i < pecas.Length; i++)
@@ -23,9 +23,7 @@ namespace Projeto1
                     //criacao 7 pecas jogador B
                     pecas[i] = new Peca(false);
                 }
-
             }
-            atualizarMap();
 
         }
 
@@ -66,6 +64,19 @@ namespace Projeto1
             return tabuleiro;
         }
 
+        public Peca pegaPeca(int x, int y)
+        {
+            for(int i = 0; i < pecas.Length; i++)
+            {
+                if(pecas[i].GetPos()[0] == x && pecas[i].GetPos()[1] == y)
+                {
+                    return pecas[i];
+                }
+            }
+
+            return null;
+        }
+
 
         public void atualizarMap()
         {
@@ -97,16 +108,9 @@ namespace Projeto1
                             }
                         }
                     }
-
                 }
             }
-            // Posiçoes que nao existem
-            tabuleiro[0,4] = 9;
-            tabuleiro[0,5] = 9;
-            tabuleiro[2,4] = 9;
-            tabuleiro[2,5] = 9;
-        }
-
+        }       
         
     
     }
