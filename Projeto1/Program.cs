@@ -123,19 +123,42 @@ namespace Projeto1
                         //se os dois forem numeros
                         if(segIsNumero == true && primIsNumero == true)
                         {
-                            //verificar posicao se existe peca
+                            //verificar se existe peca na posicao
+                            if(tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]) != null)
+                            {
+                                Peca pecaMexer = tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]);
 
-                            
-                            //verificar se pode mexer
+                                //verficar se peca pertence ao atual jogador
+                                if(pecaMexer.GetPlayer() == turno)
+                                {
+                                    int posX = pecaMexer.GetPos()[0];
+                                    int posY = pecaMexer.GetPos()[1];
 
-                            //se tudo bem, entao a peca mexe, verifica se há ponto e troca jogador e o ciclo volta atras
-
-
+                                    if(turno == true)
+                                    {
+                                        tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
+                                    }
+                                    else
+                                    {
+                                        tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB); 
+                                    }
+                                    
+                                    //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+                                    if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
+                                    {
+                                        Console.WriteLine("Posicao Inválida");
+                                    }
+                                    //caso contrario dizer e voltar ciclo
+                                    else
+                                    {
+                                        acaoCorreta = true;
+                                    }
+                                }
+                            }
                         }
-                        //se naõ forem, pedir dados novamente (criar ciclo while nisto)
                         else
                         {
-
+                            
                         }
                     }
                     //verificar se alguem vence
