@@ -24,11 +24,7 @@ namespace Projeto1
                 for(int y = 0; y < tabuleiro.getMap().GetLength(1); y++)
                 {
                     //empty spaces
-<<<<<<< HEAD
                     if(tabuleiro.checkCasasVazias(x,y))
-=======
-                    if(tabuleiro.getMap()[x,y] == 9)
->>>>>>> parent of 620d2f0 (Trying to fix espaços vazios)
                     {
                         Console.Write(" ");
                     } 
