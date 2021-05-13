@@ -91,7 +91,7 @@ namespace Projeto1
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                 if(posX != pecaMexer.GetPos()[0] && posY != pecaMexer.GetPos()[1])
                                 {
-                                    Console.WriteLine("Posicao Inválida");
+                                    Console.Write("Já existe uma peça tua neste local");
                                 }
                                 //caso contrario dizer e voltar ciclo
                                 else

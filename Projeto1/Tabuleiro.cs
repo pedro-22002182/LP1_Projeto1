@@ -136,10 +136,6 @@ namespace Projeto1
                     pecaNoLocal.ComerPeça();
                     peca.SetPos(xnovo, ynovo);
                 }
-                else if(pecaNoLocal.GetPlayer() == peca.GetPlayer())
-                {
-                    Console.Write("Já existe uma peça tua neste local");
-                }
 
             }
 
