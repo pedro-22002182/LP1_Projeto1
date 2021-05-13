@@ -125,10 +125,10 @@ namespace Projeto1
                         //se os dois forem numeros
                         if(segIsNumero == true && primIsNumero == true)
                         {
-                            Console.WriteLine("passou");
                             //verificar se existe peca na posicao
                             if(tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]) != null)
                             {
+                                Console.WriteLine("há peça");
                                 Peca pecaMexer = tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]);
 
                                 //verficar se peca pertence ao atual jogador
@@ -158,10 +158,14 @@ namespace Projeto1
                                     }
                                 }
                             }
+                            else
+                            {
+                                Console.WriteLine("Nao existe peca ai");
+                            }
                         }
                         else
                         {
-                                //Dizer que meteu mal os numeros
+                            Console.WriteLine("caracteres invalidos");
                         }
                     }
                 }
