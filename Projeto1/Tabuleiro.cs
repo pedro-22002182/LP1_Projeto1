@@ -130,7 +130,7 @@ namespace Projeto1
 
 
                 if(pecaNoLocal.GetPlayer() != peca.GetPlayer())
-
+                {
                     if(CheckFlower(pecaNoLocal.GetPos()[0], pecaNoLocal.GetPos()[1]) == false)
                     {
                         pecaNoLocal.ComerPeça();
