@@ -109,21 +109,18 @@ namespace Projeto1
 
                         for(int i = 0; i <= 9; i++)
                         {
-                            if(escolhaArray[0] == i)
+                            int val = escolhaArray[0] - '0';
+                            if(val == i)
                             {
                                 primIsNumero = true;
                             }
 
-                            if(escolhaArray[2] == i)
+                            int val2 = escolhaArray[0] - '0';
+                            if(val2 == i)
                             {
                                 segIsNumero = true;
                             }
                         }
-                        Console.WriteLine(escolhaArray[0] == 0);
-                        Console.WriteLine(Convert.ToInt32(escolhaArray[0]) == 0);
-                        Console.WriteLine(escolhaArray[0] == (char)0);
-
-                        Console.WriteLine(primIsNumero + " - " + segIsNumero);
 
                         //se os dois forem numeros
                         if(segIsNumero == true && primIsNumero == true)
@@ -164,13 +161,12 @@ namespace Projeto1
                         }
                         else
                         {
-                            
+                                //Dizer que meteu mal os numeros
                         }
                     }
-                    //verificar se alguem vence
                 }
 
-
+                //verificar se alguem vence
                 //verificar se peca esta na flor ou nao e consoante isso trcoar de player ou n
                 tabuleiro.atualizarMap();
         
