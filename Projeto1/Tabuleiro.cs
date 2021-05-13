@@ -224,15 +224,7 @@ namespace Projeto1
                 }
             }
 
-            tabuleiro[0,4] = 9;
-            tabuleiro[0,5] = 9;
-            tabuleiro[2,4] = 9;
-            tabuleiro[2,5] = 9;
-
-
-        }   
-
-
+        }       
         
         public bool checkCasasVazias(int x, int y)
         {
