@@ -24,7 +24,7 @@ namespace Projeto1
                 for(int y = 0; y < tabuleiro.getMap().GetLength(1); y++)
                 {
                     //empty spaces
-                    if(tabuleiro.getMap()[x,y] == 9)
+                    if(tabuleiro.getMap()[x,y] == [0,4] || tabuleiro.getMap()[x,y] == [0,5] ||  tabuleiro.getMap()[x,y] == (2,4)  || tabuleiro.getMap()[x,y] == (2,5))
                     {
                         Console.Write(" ");
                     } 
