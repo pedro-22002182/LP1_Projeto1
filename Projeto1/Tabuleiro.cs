@@ -133,7 +133,7 @@ namespace Projeto1
 
                 if(pecaNoLocal.GetPlayer() != peca.GetPlayer())
                 {
-                    
+                    pecaNoLocal.ComerPeça();
                 }
             }
 

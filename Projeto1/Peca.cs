@@ -46,6 +46,21 @@ namespace Projeto1
         {
             return player;
         }
+
+
+        public void ComerPeça()
+        {
+            if(player == true)
+            {
+                posX = 0;
+                posY = 4;
+            }
+            else if (player == false)
+            {
+                posX = 2;
+                posY = 4;
+            }
+        }
         
     }
 }
