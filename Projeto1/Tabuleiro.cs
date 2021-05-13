@@ -61,18 +61,15 @@ namespace Projeto1
                     {
                         ynovo -= 1;
                     }
-
-                    if(xnovo == 0 && ynovo == 0)
+                    else if(xnovo == 0 && ynovo == 0)
                     {
                         xnovo += 1;
                     }
-
-                    if(xnovo == 1 && ynovo < 7)
+                    else if(xnovo == 1 && ynovo < 7)
                     {
                         ynovo += 1;
                     }
-
-                    if(xnovo == 1 && ynovo == 7)
+                    else if(xnovo == 1 && ynovo == 7)
                     {
                        xnovo-= 1;
                     }
@@ -104,19 +101,19 @@ namespace Projeto1
                     }
 
                     //se tiver no canto direito superior
-                    if(xnovo == 2 && ynovo == 0)
+                    else if(xnovo == 2 && ynovo == 0)
                     {
                         xnovo -= 1;
                     }
 
                     //se tiver linha meio
-                    if(xnovo == 1 && ynovo < 7)
+                    else if(xnovo == 1 && ynovo < 7)
                     {
                         ynovo += 1;
                     }
 
                     //se tiver linha meio e na casa 7
-                    if(xnovo == 1 && ynovo == 7)
+                    else if(xnovo == 1 && ynovo == 7)
                     {
                         xnovo += 1;
                     }
