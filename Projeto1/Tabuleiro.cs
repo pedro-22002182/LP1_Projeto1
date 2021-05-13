@@ -223,7 +223,14 @@ namespace Projeto1
 
 
         
-    
-    }
+        public bool checkCasasVazias(int x, int y)
+        {
+            if((x == 0 && y == 4) || (x == 0 && y == 5) || (x == 2 && y == 4) || (x == 2 && y == 5))
+            {
+                return true;
+            }
 
+            return false;
+        }
+    }
 }
