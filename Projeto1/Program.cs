@@ -43,70 +43,99 @@ namespace Projeto1
                 Console.ReadLine();
                 int numeroPassos = lancarDados();
                 
-                //pedir acao ao jogador
-                Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço");
-                string escolha = Console.ReadLine();
-                char[] escolhaArray = escolha.ToCharArray();
 
-                //caso mexer peca na base
-                if(escolha == " ")
+                bool acaoCorreta = false;
+
+                while(acaoCorreta == false)
                 {
-                    if(turno == true)
+                    //pedir acao ao jogador
+                    Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço");
+                    string escolha = Console.ReadLine();
+                    char[] escolhaArray = escolha.ToCharArray();
+
+                    //caso mexer peca na base
+                    if(escolha == " ")
                     {
-                        if(tabuleiro.getMap()[0,4] == 1)
+                        if(turno == true)
                         {
-                            Peca pecaMexer = tabuleiro.pegaPeca(0,4);
-                            tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
-                            //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
-                            //caso contrario dizer e voltar ciclo
+                            if(tabuleiro.getMap()[0,4] == 1)
+                            {
+                                Peca pecaMexer = tabuleiro.pegaPeca(0,4);
+                                int posX = pecaMexer.GetPos()[0];
+                                int posY = pecaMexer.GetPos()[1];
+
+                                tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
+
+                                //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+                                if(posX != pecaMexer.GetPos()[0] && posY != pecaMexer.GetPos()[1])
+                                {
+                                    acaoCorreta = true;
+                                }
+                                //caso contrario dizer e voltar ciclo
+                                else
+                                {
+                                    Console.WriteLine("Posicao Inválida");
+                                }
+                                
+                            }
+                        }
+                        else
+                        {
+                            if(tabuleiro.getMap()[2,4] == 1)
+                            {
+                                Peca pecaMexer = tabuleiro.pegaPeca(2,4);
+                                int posX = pecaMexer.GetPos()[0];
+                                int posY = pecaMexer.GetPos()[1];
+
+                                tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB);
+                                //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+                                if(posX != pecaMexer.GetPos()[0] && posY != pecaMexer.GetPos()[1])
+                                {
+                                    acaoCorreta = true;
+                                }
+                                //caso contrario dizer e voltar ciclo
+                                else
+                                {
+                                    Console.WriteLine("Posicao Inválida");
+                                }
+                            }
                         }
                     }
                     else
                     {
-                        if(tabuleiro.getMap()[2,4] == 1)
-                        {
-                            Peca pecaMexer = tabuleiro.pegaPeca(2,4);
-                            tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB);
-                            //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
-                            //caso contrario dizer e voltar ciclo
-                        }
-                    }
-                }
-                else
-                {
-                    //verificar se o input dado tem dois numeros like "1_2"
-                    bool primIsNumero = false;
-                    bool segIsNumero = false;
+                        //verificar se o input dado tem dois numeros like "1_2"
+                        bool primIsNumero = false;
+                        bool segIsNumero = false;
 
-                    for(int i = 0; i <= 9; i++)
-                    {
-                        if(escolhaArray[0] == (char)i)
+                        for(int i = 0; i <= 9; i++)
                         {
-                            primIsNumero = true;
+                            if(escolhaArray[0] == (char)i)
+                            {
+                                primIsNumero = true;
+                            }
+
+                            if(escolhaArray[2] == (char)i)
+                            {
+                                segIsNumero = true;
+                            }
                         }
 
-                        if(escolhaArray[2] == (char)i)
+                        //se os dois forem numeros
+                        if(segIsNumero == true && primIsNumero == true)
                         {
-                            segIsNumero = true;
+                            //verificar posicao se existe peca
+                            //verificar se pode mexer
+
+                            //se tudo bem, entao a peca mexe, verifica se há ponto e troca jogador e o ciclo volta atras
+
+
+                        }
+                        //se naõ forem, pedir dados novamente (criar ciclo while nisto)
+                        else
+                        {
+
                         }
                     }
-
-                    //se os dois forem numeros
-                    if(segIsNumero == true && primIsNumero == true)
-                    {
-                        //verificar posicao se existe peca
-                        //verificar se pode mexer
-
-                        //se tudo bem, entao a peca mexe, verifica se há ponto e troca jogador e o ciclo volta atras
-
-
-                    }
-                    //se naõ forem, pedir dados novamente (criar ciclo while nisto)
-                    else
-                    {
-
-                    }
-
                     //verificar se alguem vence
                 }
 
