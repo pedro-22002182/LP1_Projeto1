@@ -28,100 +28,10 @@ namespace Projeto1
         }
         
         //TL;DR: move a peça em direçao x y + ou - dependendo da casa em que passar
-        public void movimentoPeca (int passos, Player jogador)
+        public void SetPos(int novoX, int novoY)
         {
-            int xnovo = posX;
-            int ynovo = posY;
-
-            for(int i = 0; i < passos; i++)
-            {
-                //se jogadorA
-                if(player == true)
-                {
-                    //check vitoria Peca
-                    if(xnovo == 0 && ynovo == 5)
-                    {
-                        //ponto DO
-                        if(passos == 0)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xnovo = posX;
-                            ynovo = posY;
-                        }
-                    }
-                    
-                    //Orientaçao das pecas no board
-                    if(xnovo == 0 && ynovo > 0)
-                    {
-                        ynovo -= 1;
-                    }
-
-                    if(xnovo == 0 && ynovo == 0)
-                    {
-                        xnovo += 1;
-                    }
-
-                    if(xnovo == 1 && ynovo < 7)
-                    {
-                        ynovo += 1;
-                    }
-
-                    if(xnovo == 1 && ynovo == 7)
-                    {
-                       xnovo-= 1;
-                    }
-                }
-                
-                //se jogadorB
-                if(player == false)
-                {
-                    //check vitoria Peca
-                    if(xnovo == 2 && ynovo == 5)
-                    {
-                        //ponto DO
-                        if(passos == 0)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xnovo = posX;
-                            ynovo = posY;
-                        }
-                    }
-
-                    //terceira linha até chegar ao topo
-                    if(xnovo == 2 && ynovo > 0)
-                    {
-                        ynovo -= 1;
-                    }
-
-                    //se tiver no canto direito superior
-                    if(xnovo == 2 && ynovo == 0)
-                    {
-                        xnovo -= 1;
-                    }
-
-                    //se tiver linha meio
-                    if(xnovo == 1 && ynovo < 7)
-                    {
-                        ynovo += 1;
-                    }
-
-                    //se tiver linha meio e na casa 7
-                    if(xnovo == 1 && ynovo== 7)
-                    {
-                        xnovo += 1;
-                    }
-                }
-            }
-            posX = xnovo;
-            posY = ynovo;
+            posX = novoX;
+            posY = novoY;
         }
             
 
