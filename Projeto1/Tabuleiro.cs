@@ -136,7 +136,10 @@ namespace Projeto1
                         pecaNoLocal.ComerPeça();
                         peca.SetPos(xnovo, ynovo);
                     }
-                    
+                    else
+                    {
+                        Console.WriteLine("A peça inimiga está numa posição protegida");
+                    }
                 }
             }
 
