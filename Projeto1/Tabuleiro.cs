@@ -128,12 +128,16 @@ namespace Projeto1
             {
                 Peca pecaNoLocal = pegaPeca(xnovo, ynovo);
 
-                if(pecaNoLocal.GetPlayer() != peca.GetPlayer())
-                {
-                    pecaNoLocal.ComerPeça();
-                    peca.SetPos(xnovo, ynovo);
-                }
 
+                if(pecaNoLocal.GetPlayer() != peca.GetPlayer())
+
+                    if(CheckFlower(pecaNoLocal.GetPos()[0], pecaNoLocal.GetPos()[1]) == false)
+                    {
+                        pecaNoLocal.ComerPeça();
+                        peca.SetPos(xnovo, ynovo);
+                    }
+                    
+                }
             }
 
         }
