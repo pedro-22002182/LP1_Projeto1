@@ -32,93 +32,54 @@ namespace Projeto1
 
         public void moverPeca (Peca peca,int passos, Player jogador) 
         {
-            int xnovo = peca.GetPos()[0];
-            int ynovo = peca.GetPos()[1];
 
-            for(int i = 0; i < passos; i++)
+            int xnovo = peca.GetPreviewsPos(passos, jogador)[0];
+            int ynovo = peca.GetPreviewsPos(passos, jogador)[1];
+
+            //se jogadorB
+            if(peca.GetPlayer() == false)
             {
-                //se jogadorA
-                if(peca.GetPlayer() == true)
+                //check vitoria Peca
+                if(xnovo == 2 && ynovo == 5)
                 {
-                    //check vitoria Peca
-                    if(xnovo == 0 && ynovo == 5)
+                    //ponto DO
+                    if(passos == 0)
                     {
-                        //ponto DO
-                        if(passos == 0)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xnovo = peca.GetPos()[0];
-                            ynovo = peca.GetPos()[1];
-                        }
+                        jogador.plusPontos();
                     }
-                    
-                    //Orientaçao das pecas no board
-                    if(xnovo == 0 && ynovo > 0)
+                    else
                     {
-                        ynovo -= 1;
-                    }
-                    else if(xnovo == 0 && ynovo == 0)
-                    {
-                        xnovo += 1;
-                    }
-                    else if(xnovo == 1 && ynovo < 7)
-                    {
-                        ynovo += 1;
-                    }
-                    else if(xnovo == 1 && ynovo == 7)
-                    {
-                       xnovo-= 1;
+                        //retorna à posicao onde forma lancados os dados
+                        xnovo = peca.GetPos()[0];
+                        ynovo = peca.GetPos()[1];
                     }
                 }
-                
-                //se jogadorB
-                if(peca.GetPlayer() == false)
+
+                //terceira linha até chegar ao topo
+                if(xnovo == 2 && ynovo > 0)
+                    {
+                    ynovo -= 1;
+                }
+
+                //se tiver no canto direito superior
+                else if(xnovo == 2 && ynovo == 0)
                 {
-                    //check vitoria Peca
-                    if(xnovo == 2 && ynovo == 5)
-                    {
-                        //ponto DO
-                        if(passos == 0)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xnovo = peca.GetPos()[0];
-                            ynovo = peca.GetPos()[1];
-                        }
-                    }
+                    xnovo -= 1;
+                }
 
-                    //terceira linha até chegar ao topo
-                    if(xnovo == 2 && ynovo > 0)
-                    {
-                        ynovo -= 1;
-                    }
+                //se tiver linha meio
+                else if(xnovo == 1 && ynovo < 7)
+                {
+                    ynovo += 1;
+                }
 
-                    //se tiver no canto direito superior
-                    else if(xnovo == 2 && ynovo == 0)
-                    {
-                        xnovo -= 1;
-                    }
-
-                    //se tiver linha meio
-                    else if(xnovo == 1 && ynovo < 7)
-                    {
-                        ynovo += 1;
-                    }
-
-                    //se tiver linha meio e na casa 7
-                    else if(xnovo == 1 && ynovo == 7)
-                    {
-                        xnovo += 1;
-                    }
+                //se tiver linha meio e na casa 7
+                else if(xnovo == 1 && ynovo == 7)
+                {
+                    xnovo += 1;
                 }
             }
+
 
             if(pegaPeca(xnovo, ynovo) == null)
             {

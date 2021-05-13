@@ -124,6 +124,8 @@ namespace Projeto1
                         if(segIsNumero == true && primIsNumero == true)
                         {
                             //verificar posicao se existe peca
+
+                            
                             //verificar se pode mexer
 
                             //se tudo bem, entao a peca mexe, verifica se há ponto e troca jogador e o ciclo volta atras
@@ -139,6 +141,8 @@ namespace Projeto1
                     //verificar se alguem vence
                 }
 
+
+                //verificar se peca esta na flor ou nao e consoante isso trcoar de player ou n
                 tabuleiro.atualizarMap();
         
             }

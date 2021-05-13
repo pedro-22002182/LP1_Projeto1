@@ -61,6 +61,57 @@ namespace Projeto1
                 posY = 4;
             }
         }
+
+
+        public int[] GetPreviewsPos(int passos, Player jogador)
+        {
+            int xnovo = posX;
+            int ynovo = posY;
+
+            for(int i = 0; i < passos; i++)
+            {
+                //se jogadorA
+                if(player == true)
+                {
+                    //check vitoria Peca
+                    if(xnovo == 0 && ynovo == 5)
+                    {
+                        //ponto DO
+                        if(passos == 0)
+                        {
+                            jogador.plusPontos();
+                        }
+                        else
+                        {
+                            //retorna à posicao onde forma lancados os dados
+                            xnovo = posX;
+                            ynovo = posY;
+                        }
+                    }
+                    
+                    //Orientaçao das pecas no board
+                    if(xnovo == 0 && ynovo > 0)
+                    {
+                        ynovo -= 1;
+                    }
+                    else if(xnovo == 0 && ynovo == 0)
+                    {
+                        xnovo += 1;
+                    }
+                    else if(xnovo == 1 && ynovo < 7)
+                    {
+                        ynovo += 1;
+                    }
+                    else if(xnovo == 1 && ynovo == 7)
+                    {
+                       xnovo-= 1;
+                    }
+                }
+            }
+            int[] posPreview = new int[]{xnovo, ynovo};
+
+            return posPreview;
+        }
         
     }
 }
