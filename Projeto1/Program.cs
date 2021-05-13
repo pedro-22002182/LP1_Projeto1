@@ -67,14 +67,14 @@ namespace Projeto1
                                 tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
 
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
-                                if(posX != pecaMexer.GetPos()[0] && posY != pecaMexer.GetPos()[1])
+                                if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                 {
-                                    acaoCorreta = true;
+                                    Console.WriteLine("Posicao Inválida");
                                 }
                                 //caso contrario dizer e voltar ciclo
                                 else
                                 {
-                                    Console.WriteLine("Posicao Inválida");
+                                    acaoCorreta = true;
                                 }
                                 
                             }
@@ -91,12 +91,12 @@ namespace Projeto1
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                 if(posX != pecaMexer.GetPos()[0] && posY != pecaMexer.GetPos()[1])
                                 {
-                                    acaoCorreta = true;
+                                    Console.WriteLine("Posicao Inválida");
                                 }
                                 //caso contrario dizer e voltar ciclo
                                 else
                                 {
-                                    Console.WriteLine("Posicao Inválida");
+                                    acaoCorreta = true;
                                 }
                             }
                         }
