@@ -125,10 +125,13 @@ namespace Projeto1
                         //se os dois forem numeros
                         if(segIsNumero == true && primIsNumero == true)
                         {
+                            Console.WriteLine(escolhaArray[0] + " - " + escolhaArray[2]);
+                            Console.WriteLine(tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]));
+                            
                             //verificar se existe peca na posicao
                             if(tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]) != null)
                             {
-                                Console.WriteLine("há peça");
+                               
                                 Peca pecaMexer = tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]);
 
                                 //verficar se peca pertence ao atual jogador
