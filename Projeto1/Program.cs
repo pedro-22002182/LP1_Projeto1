@@ -139,6 +139,7 @@ namespace Projeto1
                     //verificar se alguem vence
                 }
 
+                tabuleiro.atualizarMap();
         
             }
             
