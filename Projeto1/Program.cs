@@ -109,20 +109,26 @@ namespace Projeto1
 
                         for(int i = 0; i <= 9; i++)
                         {
-                            if(escolhaArray[0] == (char)i)
+                            if(escolhaArray[0] == i)
                             {
                                 primIsNumero = true;
                             }
 
-                            if(escolhaArray[2] == (char)i)
+                            if(escolhaArray[2] == i)
                             {
                                 segIsNumero = true;
                             }
                         }
+                        Console.WriteLine(escolhaArray[0] == 0);
+                        Console.WriteLine(Convert.ToInt32(escolhaArray[0]) == 0);
+                        Console.WriteLine(escolhaArray[0] == (char)0);
+
+                        Console.WriteLine(primIsNumero + " - " + segIsNumero);
 
                         //se os dois forem numeros
                         if(segIsNumero == true && primIsNumero == true)
                         {
+                            Console.WriteLine("passou");
                             //verificar se existe peca na posicao
                             if(tabuleiro.pegaPeca(escolhaArray[0], escolhaArray[2]) != null)
                             {
