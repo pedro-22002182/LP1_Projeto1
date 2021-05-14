@@ -14,5 +14,14 @@ namespace Projeto1
         {
             score += 1;
         }
+
+        public bool CheckVitória()
+        {
+            if(score == 7)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

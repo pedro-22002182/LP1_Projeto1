@@ -196,6 +196,21 @@ namespace Projeto1
                 //verificar se peca esta na flor ou nao e consoante isso trcoar de player ou n
                 tabuleiro.atualizarMap();
 
+                if(playerA.CheckVitória() == true )
+                {
+                    Console.WriteLine("PARABENS JOGADOR A GANHAS-TE!!!");
+                    acabou = true;
+
+                }
+
+                 if(playerB.CheckVitória() == true )
+                {
+                    Console.WriteLine("PARABENS JOGADOR B GANHAS-TE!!!");
+                    acabou = true;
+
+                }
+
+
                 if(tabuleiro.CheckFlower(xFinalPecaMove, yFinalPecaMove))
                 {
                     Console.WriteLine("Estás numa casa segura e podes jogar novamente!");
