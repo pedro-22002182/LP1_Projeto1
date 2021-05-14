@@ -102,12 +102,12 @@ namespace Projeto1
                             }
                         }
                     }
-                    else
+                    else if(escolhaArray.Length >= 3 || escolhaArray[0] != '\0' || escolhaArray[2] != '\0') 
                     {
                         //verificar se o input dado tem dois numeros like "1_2"
                         bool primIsNumero = false;
                         bool segIsNumero = false;
-
+                        
                         for(int i = 0; i <= 9; i++)
                         {
                             int val = escolhaArray[0] - '0';
