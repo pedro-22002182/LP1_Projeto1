@@ -80,7 +80,7 @@ namespace Projeto1
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                 if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                 {
-                                    Console.WriteLine("Posicao Inválida");
+                                    Console.Write("Já existe uma peça tua neste local");
                                 }
                                 //caso contrario dizer e voltar ciclo
                                 else
@@ -102,7 +102,7 @@ namespace Projeto1
 
                                 tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB);
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
-                                if(posX != pecaMexer.GetPos()[0] && posY != pecaMexer.GetPos()[1])
+                                if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                 {
                                     Console.Write("Já existe uma peça tua neste local");
                                 }
