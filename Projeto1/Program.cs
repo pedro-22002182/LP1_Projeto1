@@ -176,6 +176,9 @@ namespace Projeto1
                 //verificar se alguem vence
                 //verificar se peca esta na flor ou nao e consoante isso trcoar de player ou n
                 tabuleiro.atualizarMap();
+
+                turno = !turno;
+
         
             }
             
