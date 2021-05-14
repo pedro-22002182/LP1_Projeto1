@@ -60,7 +60,9 @@ namespace Projeto1
                 while(acaoCorreta == false)
                 {
                     //pedir acao ao jogador
-                    Console.WriteLine("Coloca coordenas (ex: 1_2) da peça a ser mexida ou, mexer nova peça espaço");
+                    Console.WriteLine("Coloca as coordenas da casa (ex: 1_2) da peça a ser mexida!");
+                    Console.WriteLine("Ou podes coloca espaço para mexer instantaneamente uma peca da base!");
+
                     string escolha = Console.ReadLine();
                     char[] escolhaArray = escolha.ToCharArray();
 
@@ -80,7 +82,7 @@ namespace Projeto1
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                 if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                 {
-                                    Console.Write("Já existe uma peça tua neste local");
+                                    Console.WriteLine("Já existe uma peça tua neste local");
                                 }
                                 //caso contrario dizer e voltar ciclo
                                 else
@@ -104,7 +106,7 @@ namespace Projeto1
                                 //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                 if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                 {
-                                    Console.Write("Já existe uma peça tua neste local");
+                                    Console.WriteLine("Já existe uma peça tua neste local");
                                 }
                                 //caso contrario dizer e voltar ciclo
                                 else
