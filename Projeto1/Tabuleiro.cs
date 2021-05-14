@@ -36,51 +36,7 @@ namespace Projeto1
             int xnovo = peca.GetPreviewsPos(passos, jogador)[0];
             int ynovo = peca.GetPreviewsPos(passos, jogador)[1];
 
-            //se jogadorB
-            if(peca.GetPlayer() == false)
-            {
-                //check vitoria Peca
-                if(xnovo == 2 && ynovo == 5)
-                {
-                    //ponto DO
-                    if(passos == 0)
-                    {
-                        jogador.plusPontos();
-                    }
-                    else
-                    {
-                        //retorna à posicao onde forma lancados os dados
-                        xnovo = peca.GetPos()[0];
-                        ynovo = peca.GetPos()[1];
-                    }
-                }
-
-                //terceira linha até chegar ao topo
-                if(xnovo == 2 && ynovo > 0)
-                    {
-                    ynovo -= 1;
-                }
-
-                //se tiver no canto direito superior
-                else if(xnovo == 2 && ynovo == 0)
-                {
-                    xnovo -= 1;
-                }
-
-                //se tiver linha meio
-                else if(xnovo == 1 && ynovo < 7)
-                {
-                    ynovo += 1;
-                }
-
-                //se tiver linha meio e na casa 7
-                else if(xnovo == 1 && ynovo == 7)
-                {
-                    xnovo += 1;
-                }
-            }
-
-
+        
             if(pegaPeca(xnovo, ynovo) == null)
             {
                 peca.SetPos(xnovo, ynovo);
