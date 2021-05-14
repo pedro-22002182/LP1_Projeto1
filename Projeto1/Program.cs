@@ -81,7 +81,7 @@ namespace Projeto1
                         }
                         else
                         {
-                            if(tabuleiro.getMap()[2,4] == 1)
+                            if(tabuleiro.getMap()[2,4] == 2)
                             {
                                 Peca pecaMexer = tabuleiro.pegaPeca(2,4);
                                 int posX = pecaMexer.GetPos()[0];
