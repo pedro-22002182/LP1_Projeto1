@@ -45,6 +45,9 @@ namespace Projeto1
                 
 
                 bool acaoCorreta = false;
+                int xFinalPecaMove = -1;
+                int yFinalPecaMove = -1;
+
 
                 while(acaoCorreta == false)
                 {
@@ -75,6 +78,8 @@ namespace Projeto1
                                 else
                                 {
                                     acaoCorreta = true;
+                                    xFinalPecaMove = pecaMexer.GetPos()[0];
+                                    yFinalPecaMove = pecaMexer.GetPos()[1];
                                 }
                                 
                             }
@@ -97,6 +102,8 @@ namespace Projeto1
                                 else
                                 {
                                     acaoCorreta = true;
+                                    xFinalPecaMove = pecaMexer.GetPos()[0];
+                                    yFinalPecaMove = pecaMexer.GetPos()[1];
                                 }
                             }
                         }
@@ -158,6 +165,8 @@ namespace Projeto1
                                     else
                                     {
                                         acaoCorreta = true;
+                                        xFinalPecaMove = pecaMexer.GetPos()[0];
+                                        yFinalPecaMove = pecaMexer.GetPos()[1];
                                     }
                                 }
                             }
@@ -177,11 +186,15 @@ namespace Projeto1
                 //verificar se peca esta na flor ou nao e consoante isso trcoar de player ou n
                 tabuleiro.atualizarMap();
 
-                turno = !turno;
-
-        
+                if(tabuleiro.CheckFlower(xFinalPecaMove, yFinalPecaMove))
+                {
+                    Console.WriteLine("Estás numa casa segura e podes jogar novamente!");
+                }
+                else
+                {
+                    turno = !turno;
+                }
             }
-            
         }
 
         static int lancarDados()
