@@ -77,7 +77,7 @@ namespace Projeto1
                     if(xnovo == 0 && ynovo == 5)
                     {
                         //ponto DO
-                        if(i == 0)
+                        if(i <= 1)
                         {
                             jogador.plusPontos();
                         }
