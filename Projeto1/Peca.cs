@@ -68,7 +68,7 @@ namespace Projeto1
             int xnovo = posX;
             int ynovo = posY;
 
-            for(int i = 0; i < passos; i++)
+            for(int i = passos; i > 0; i--)
             {
                 //se jogadorA
                 if(player == true)
@@ -77,7 +77,7 @@ namespace Projeto1
                     if(xnovo == 0 && ynovo == 5)
                     {
                         //ponto DO
-                        if(passos == 0)
+                        if(i == 0)
                         {
                             jogador.plusPontos();
                         }

@@ -11,11 +11,11 @@ namespace Projeto1
         public Tabuleiro()
         {
             this.tabuleiro = new int [3,8];
-            this.pecas = new Peca[13];
+            this.pecas = new Peca[14];
 
             for(int i = 0; i < pecas.Length; i++)
             {
-                if(i <= 7)
+                if(i <= 6)
                 {
                     //criacao 7 pecas jogador A
                     pecas[i] = new Peca(true);
@@ -144,6 +144,7 @@ namespace Projeto1
             {
                 if(pecas[i].GetPos()[0] == x && pecas[i].GetPos()[1] == y)
                 {
+                    
                     return pecas[i];
                 }
             }
@@ -185,6 +186,11 @@ namespace Projeto1
                 }
             }
 
+            Console.WriteLine(pecas.Length);
+            for(int p = 0; p < pecas.Length; p++)
+            {
+                Console.WriteLine(pecas[p].GetPos()[0] + " - " + pecas[p].GetPos()[1]);
+            }
         }       
         
         public bool checkCasasVazias(int x, int y)
