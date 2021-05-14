@@ -15,20 +15,44 @@ namespace Projeto1
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
 
 
-            graficos.Menu();
-
             //Game loop
-            bool acabou = false;
-            
-            //Quando é true é o playerA a jogar e quando é false é o playerB
+            bool jogoAcabou = false;
+
+            //responsavel ver turno, se true é playerA a jogar, se false é o playerB
             bool turno = true;
 
-            
+            //Introducao loop
+            bool introducaoJogo = true;
+
+            graficos.Menu();
+
+            while(introducaoJogo == true)
+            {
+                
+                string escolha = Console.ReadLine();
+
+                if(escolha == "1")
+                {
+                    introducaoJogo = false;
+                }
+                else if(escolha == "2")
+                {
+                    graficos.Regras();
+                }
+                else if(escolha == "3")
+                {
+                    System.Environment.Exit(1);
+                }
+            }
             
 
-            while (acabou == false)
+            
+
+            while (jogoAcabou == false)
             {
                 //mostrar tabuleiro
+                graficos.showScore();
+                Console.WriteLine();
                 graficos.showMap();
 
                 //mostrar de quem é a vez
@@ -180,12 +204,12 @@ namespace Projeto1
                 if(playerA.CheckVitória() == true)
                 {
                     Console.WriteLine("PARABENS JOGADOR A GANHAS-TE!!!");
-                    acabou = true;
+                    jogoAcabou = true;
                 }
                 if(playerB.CheckVitória() == true )
                 {
                     Console.WriteLine("PARABENS JOGADOR B GANHAS-TE!!!");
-                    acabou = true;
+                    jogoAcabou = true;
                 }
 
                 //Checkar se existe flor na casa em que peca ficou - se sim jogador joga again
