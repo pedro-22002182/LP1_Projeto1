@@ -15,7 +15,7 @@ namespace Projeto1
             Graficos graficos = new Graficos(tabuleiro, playerA, playerB);
 
 
-            graficos.regras();
+            graficos.Menu();
 
             //Game loop
             bool acabou = false;
@@ -107,7 +107,7 @@ namespace Projeto1
                         //verificar se o input dado tem dois numeros like "1_2"
                         bool primIsNumero = false;
                         bool segIsNumero = false;
-                        
+
                         for(int i = 0; i <= 9; i++)
                         {
                             int val = escolhaArray[0] - '0';

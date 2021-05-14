@@ -23,5 +23,10 @@ namespace Projeto1
             }
             return false;
         }
+
+        public int getScore()
+        {
+            return score;
+        }
     }
 }
