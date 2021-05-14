@@ -69,52 +69,36 @@ namespace Projeto1
                     //caso mexer peca na base
                     if(escolha == " ")
                     {
-                        if(turno == true)
-                        {
-                            if(tabuleiro.getMap()[0,4] == 1)
-                            {
-                                Peca pecaMexer = tabuleiro.pegaPeca(0,4);
-                                int posX = pecaMexer.GetPos()[0];
-                                int posY = pecaMexer.GetPos()[1];
 
+                        if(tabuleiro.getMap()[0,4] == 1 || tabuleiro.getMap()[0,4] == 2)
+                        {
+
+                            Peca pecaMexer;
+
+                            if(turno == true)
+                                pecaMexer = tabuleiro.pegaPeca(0,4);
+                            else
+                                pecaMexer = tabuleiro.pegaPeca(2,4);
+
+                            int posX = pecaMexer.GetPos()[0];
+                            int posY = pecaMexer.GetPos()[1];
+
+                            if(turno == true)
                                 tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
+                            else
+                                tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB); 
 
-                                //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
-                                if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
-                                {
-                                    Console.WriteLine("Já existe uma peça tua neste local");
-                                }
-                                //caso contrario dizer e voltar ciclo
-                                else
-                                {
-                                    acaoCorreta = true;
-                                    xFinalPecaMove = pecaMexer.GetPos()[0];
-                                    yFinalPecaMove = pecaMexer.GetPos()[1];
-                                }
-                                
-                            }
-                        }
-                        else
-                        {
-                            if(tabuleiro.getMap()[2,4] == 2)
+                            //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+                            if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                             {
-                                Peca pecaMexer = tabuleiro.pegaPeca(2,4);
-                                int posX = pecaMexer.GetPos()[0];
-                                int posY = pecaMexer.GetPos()[1];
-
-                                tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB);
-                                //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
-                                if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
-                                {
-                                    Console.WriteLine("Já existe uma peça tua neste local");
-                                }
-                                //caso contrario dizer e voltar ciclo
-                                else
-                                {
-                                    acaoCorreta = true;
-                                    xFinalPecaMove = pecaMexer.GetPos()[0];
-                                    yFinalPecaMove = pecaMexer.GetPos()[1];
-                                }
+                                Console.WriteLine("Posição Inválida");
+                            }
+                            //caso contrario dizer e voltar ciclo
+                            else
+                            {
+                                acaoCorreta = true;
+                                xFinalPecaMove = pecaMexer.GetPos()[0];
+                                yFinalPecaMove = pecaMexer.GetPos()[1];
                             }
                         }
                     }
@@ -158,13 +142,9 @@ namespace Projeto1
                                     int posY = pecaMexer.GetPos()[1];
 
                                     if(turno == true)
-                                    {
                                         tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
-                                    }
                                     else
-                                    {
                                         tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB); 
-                                    }
                                     
                                     //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                     if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
@@ -192,30 +172,28 @@ namespace Projeto1
                     }
                 }
 
-                //verificar se alguem vence
-                //verificar se peca esta na flor ou nao e consoante isso trcoar de player ou n
+                //atualizar o Mapa
                 tabuleiro.atualizarMap();
+                
 
-                if(playerA.CheckVitória() == true )
+                //verificar Vitorias - se true jogo acaba
+                if(playerA.CheckVitória() == true)
                 {
                     Console.WriteLine("PARABENS JOGADOR A GANHAS-TE!!!");
                     acabou = true;
-
                 }
-
-                 if(playerB.CheckVitória() == true )
+                if(playerB.CheckVitória() == true )
                 {
                     Console.WriteLine("PARABENS JOGADOR B GANHAS-TE!!!");
                     acabou = true;
-
                 }
 
-
+                //Checkar se existe flor na casa em que peca ficou - se sim jogador joga again
                 if(tabuleiro.CheckFlower(xFinalPecaMove, yFinalPecaMove))
                 {
                     Console.WriteLine("Estás numa casa segura e podes jogar novamente!");
                 }
-                else
+                else //se nao, troca turno
                 {
                     turno = !turno;
                 }
@@ -230,8 +208,5 @@ namespace Projeto1
             Console.WriteLine($" O numero é {valorInteiro}");
             return valorInteiro;
         }
-
-
-            //random teste
     }
 }
