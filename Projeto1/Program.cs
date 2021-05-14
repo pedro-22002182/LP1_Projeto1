@@ -116,7 +116,7 @@ namespace Projeto1
                                 primIsNumero = true;
                             }
 
-                            int val2 = escolhaArray[0] - '0';
+                            int val2 = escolhaArray[2] - '0';
                             if(val2 == i)
                             {
                                 segIsNumero = true;
