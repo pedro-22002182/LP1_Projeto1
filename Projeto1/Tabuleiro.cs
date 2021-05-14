@@ -141,12 +141,6 @@ namespace Projeto1
                     }
                 }
             }
-
-            Console.WriteLine(pecas.Length);
-            for(int p = 0; p < pecas.Length; p++)
-            {
-                Console.WriteLine(pecas[p].GetPos()[0] + " - " + pecas[p].GetPos()[1]);
-            }
         }       
         
         public bool checkCasasVazias(int x, int y)
