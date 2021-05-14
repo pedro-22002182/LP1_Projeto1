@@ -42,9 +42,16 @@ namespace Projeto1
                 Console.WriteLine("Para lançar os dados clica no enter");
                 Console.ReadLine();
                 int numeroPassos = lancarDados();
+                bool acaoCorreta = false;
+                if(numeroPassos == 0)
+                {
+                    Console.WriteLine("Opps tives-te azar");
+                    acaoCorreta = true;
+
+                }
                 
 
-                bool acaoCorreta = false;
+                
 
                 while(acaoCorreta == false)
                 {
