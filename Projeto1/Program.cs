@@ -218,12 +218,12 @@ namespace Projeto1
                 
 
                 //verificar Vitorias - se true jogo acaba
-                if(playerA.CheckVitória() == true)
+                if(playerA.checkVitoria() == true)
                 {
                     Console.WriteLine("\n PARABENS JOGADOR A GANHAS-TE!!!");
                     jogoAcabou = true;
                 }
-                if(playerB.CheckVitória() == true )
+                if(playerB.checkVitoria() == true )
                 {
                     Console.WriteLine("\n PARABENS JOGADOR B GANHAS-TE!!!");
                     jogoAcabou = true;
