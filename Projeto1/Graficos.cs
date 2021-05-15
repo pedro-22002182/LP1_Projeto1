@@ -17,6 +17,7 @@ namespace Projeto1
 
         public void showMap()
         {
+            Console.WriteLine("-----------------------------------------------");
             //reading x
             for(int x = 0; x < tabuleiro.getMap().GetLength(0); x++)
             {
@@ -43,12 +44,12 @@ namespace Projeto1
 
                 Console.Write("\n");
             }
+            Console.WriteLine();
         }
 
         public void showScore()
         {
             Console.WriteLine("PlayerA Score: " + playerA.getScore() + "                 PlayerB Score: " + playerB.getScore());
-            Console.WriteLine();
         }
 
         public void Menu()
@@ -72,7 +73,6 @@ namespace Projeto1
             Console.WriteLine(" - Consoante o valor calgado terás de escolher a peça a ser mexida;");
             Console.WriteLine(" - Para tal, poderás colocar as coordenas da casa onde está uma peça tua (ex: 1_2)");
             Console.WriteLine(" - Ou podes colocar apenas um espaço para mexer instantaneamente uma peca da base!");
-            Console.WriteLine("\n Não te preocupes que repetimos as regras ao longo do jogo!");
             Console.WriteLine();
         }
     }

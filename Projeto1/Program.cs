@@ -60,13 +60,13 @@ namespace Projeto1
 
                 //mostrar de quem é a vez
                 if(turno == true) 
-                    Console.WriteLine("É a vez do playerA jogar! \n");
+                    Console.WriteLine("É a vez do playerA jogar!");
                 else
-                    Console.WriteLine("É a vez do playerB jogar! \n");
+                    Console.WriteLine("É a vez do playerB jogar!");
 
 
                 //Lancar os dados de forma automatica
-                Console.WriteLine("Para lançar os dados clica no enter");
+                Console.WriteLine("Enter para lançar o dado");
                 Console.ReadLine();
                 int numeroPassos = lancarDados();
 
@@ -86,16 +86,19 @@ namespace Projeto1
                 while(acaoCorreta == false)
                 {
                     //pedir acao ao jogador
-                    Console.WriteLine("Coloca as coordenas da casa (ex: 1_2) da peça a ser mexida!");
-                    Console.WriteLine("Ou podes coloca espaço para mexer instantaneamente uma peca da base!");
+                    Console.WriteLine("\nEscolhe a peça a ser mexida!");
+                    Console.WriteLine("..(3 - para ver controles)..");
 
                     string escolha = Console.ReadLine();
                     char[] escolhaArray = escolha.ToCharArray();
 
-                    //caso mexer peca na base
-                    if(escolha == " ")
+                    if(escolha == "3")
                     {
-
+                        graficos.Controles();
+                    }
+                    //caso mexer peca na base
+                    else if(escolha == " ")
+                    {
                         if(tabuleiro.getMap()[0,4] == 1 || tabuleiro.getMap()[0,4] == 2)
                         {
 
@@ -128,7 +131,7 @@ namespace Projeto1
                             }
                         }
                     }
-                    else if(escolhaArray.Length >= 3 || escolhaArray[0] != '\0' || escolhaArray[2] != '\0') 
+                    else if(escolhaArray.Length >= 3) 
                     {
                         //verificar se o input dado tem dois numeros like "1_2"
                         bool primIsNumero = false;
@@ -175,7 +178,7 @@ namespace Projeto1
                                     //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                     if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                     {
-                                        Console.WriteLine("Posicao Inválida \n");
+                                        Console.WriteLine("\n Posicao Inválida \n");
                                     }
                                     //caso contrario dizer e voltar ciclo
                                     else
@@ -185,15 +188,19 @@ namespace Projeto1
                                         yFinalPecaMove = pecaMexer.GetPos()[1];
                                     }
                                 }
+                                else
+                                {
+                                    Console.WriteLine("\n Essa peça não é tua.. \n");
+                                }
                             }
                             else
                             {
-                                Console.WriteLine("Nao existe nenhuma peça aí.. \n");
+                                Console.WriteLine("\n Nao existe nenhuma peça aí.. \n");
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Caracteres inválidos.. \n");
+                            Console.WriteLine("\n Caracteres inválidos.. \n");
                         }
                     }
                 }
@@ -205,24 +212,26 @@ namespace Projeto1
                 //verificar Vitorias - se true jogo acaba
                 if(playerA.CheckVitória() == true)
                 {
-                    Console.WriteLine("PARABENS JOGADOR A GANHAS-TE!!!");
+                    Console.WriteLine("\n PARABENS JOGADOR A GANHAS-TE!!!");
                     jogoAcabou = true;
                 }
                 if(playerB.CheckVitória() == true )
                 {
-                    Console.WriteLine("PARABENS JOGADOR B GANHAS-TE!!!");
+                    Console.WriteLine("\n PARABENS JOGADOR B GANHAS-TE!!!");
                     jogoAcabou = true;
                 }
 
                 //Checkar se existe flor na casa em que peca ficou - se sim jogador joga again
                 if(tabuleiro.CheckFlower(xFinalPecaMove, yFinalPecaMove))
                 {
-                    Console.WriteLine("Estás numa casa segura e podes jogar novamente! \n");
+                    Console.WriteLine("\n Estás numa casa segura e podes jogar novamente! \n");
                 }
                 else //se nao, troca turno
                 {
                     turno = !turno;
                 }
+
+                Console.WriteLine("\n");
             }
         }
 

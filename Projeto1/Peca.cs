@@ -1,3 +1,5 @@
+using System;
+
 namespace Projeto1
 {
 
@@ -65,6 +67,15 @@ namespace Projeto1
 
         public int[] GetPreviewsPos(int passos, Player jogador)
         {
+
+            //se já tiverem feito ponto
+            if(posX == 0 && posY == 5 || posX == 2 && posY == 5)
+            {
+                int[] pecaPonto = new int[]{posX, posY};
+                return pecaPonto;
+            }
+
+
             int xnovo = posX;
             int ynovo = posY;
 
@@ -72,23 +83,7 @@ namespace Projeto1
             {
                 //se jogadorA
                 if(player == true)
-                {
-                    //check vitoria Peca
-                    if(xnovo == 0 && ynovo == 5)
-                    {
-                        //ponto DO
-                        if(i == 1)
-                        {
-                            jogador.plusPontos();
-                        }
-                        else
-                        {
-                            //retorna à posicao onde forma lancados os dados
-                            xnovo = posX;
-                            ynovo = posY;
-                        }
-                    }
-                    
+                {                
                     //Orientaçao das pecas no board
                     if(xnovo == 0 && ynovo > 0)
                     {
@@ -106,26 +101,30 @@ namespace Projeto1
                     {
                        xnovo-= 1;
                     }
-                }
-                //se jogadorB
-                else if(player == false)
-                {
+
                     //check vitoria Peca
-                    if(xnovo == 2 && ynovo == 5)
+                    if(xnovo == 0 && ynovo == 5)
                     {
                         //ponto DO
                         if(i == 1)
                         {
                             jogador.plusPontos();
+                            Console.WriteLine("\n Fizeste um ponto!");
+                            break;
                         }
                         else
                         {
-                            //retorna à posicao onde forma lancados os dados
+                            //retorna à posicao onde foram lancados os dados
                             xnovo = posX;
                             ynovo = posY;
+                            Console.WriteLine("\n Não é possível o movimento");
+                            break;
                         }
                     }
-                    
+                }
+                //se jogadorB
+                else if(player == false)
+                {
                     //Orientaçao das pecas no board
                     if(xnovo == 2 && ynovo > 0)
                     {
@@ -143,10 +142,30 @@ namespace Projeto1
                     {
                        xnovo += 1;
                     }
+
+                    //check vitoria Peca
+                    if(xnovo == 2 && ynovo == 5)
+                    {
+                        //ponto DO
+                        if(i == 1)
+                        {
+                            jogador.plusPontos();
+                            Console.WriteLine("\n Fizeste um ponto!");
+                            break;
+                        }
+                        else
+                        {
+                            //retorna à posicao onde forma lancados os dados
+                            xnovo = posX;
+                            ynovo = posY;
+                            Console.WriteLine("\n Não é possível o movimento");
+                            break;
+                        }
+                    }
                 }
             }
-            int[] posPreview = new int[]{xnovo, ynovo};
 
+            int[] posPreview = new int[]{xnovo, ynovo};
             return posPreview;
         }
         
