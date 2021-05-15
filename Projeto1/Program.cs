@@ -203,6 +203,10 @@ namespace Projeto1
                             Console.WriteLine("\n Caracteres inválidos.. \n");
                         }
                     }
+                    else
+                    {
+                        Console.WriteLine("\n Caracteres inválidos.. \n");
+                    }
                 }
 
                 //atualizar o Mapa
