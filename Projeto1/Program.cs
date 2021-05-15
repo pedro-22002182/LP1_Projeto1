@@ -96,6 +96,10 @@ namespace Projeto1
                     {
                         graficos.Controles();
                     }
+                    else if(escolha == "4")
+                    {
+                        System.Environment.Exit(1);
+                    }
                     //caso mexer peca na base
                     else if(escolha == " ")
                     {
