@@ -41,6 +41,10 @@ namespace Projeto1
                 }
                 else if(escolha == "3")
                 {
+                    graficos.Controles();
+                }
+                else if(escolha == "4")
+                {
                     System.Environment.Exit(1);
                 }
             }
@@ -52,14 +56,13 @@ namespace Projeto1
             {
                 //mostrar tabuleiro
                 graficos.showScore();
-                Console.WriteLine();
                 graficos.showMap();
 
                 //mostrar de quem é a vez
                 if(turno == true) 
-                    Console.WriteLine("É a vez do playerA");
+                    Console.WriteLine("É a vez do playerA jogar! \n");
                 else
-                    Console.WriteLine("É a vez do playerB");
+                    Console.WriteLine("É a vez do playerB jogar! \n");
 
 
                 //Lancar os dados de forma automatica
@@ -74,9 +77,8 @@ namespace Projeto1
 
                 if(numeroPassos == 0)
                 {
-                    Console.WriteLine("Opps tives-te azar");
+                    Console.WriteLine("Opps tives-te azar..");
                     acaoCorreta = true;
-
                 }
                 
             
@@ -115,7 +117,7 @@ namespace Projeto1
                             //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                             if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                             {
-                                Console.WriteLine("Posição Inválida");
+                                Console.WriteLine("Posição Inválida \n");
                             }
                             //caso contrario dizer e voltar ciclo
                             else
@@ -173,7 +175,7 @@ namespace Projeto1
                                     //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
                                     if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                                     {
-                                        Console.WriteLine("Posicao Inválida");
+                                        Console.WriteLine("Posicao Inválida \n");
                                     }
                                     //caso contrario dizer e voltar ciclo
                                     else
@@ -186,12 +188,12 @@ namespace Projeto1
                             }
                             else
                             {
-                                Console.WriteLine("Nao existe peca ai");
+                                Console.WriteLine("Nao existe nenhuma peça aí.. \n");
                             }
                         }
                         else
                         {
-                            Console.WriteLine("caracteres invalidos");
+                            Console.WriteLine("Caracteres inválidos.. \n");
                         }
                     }
                 }
@@ -215,7 +217,7 @@ namespace Projeto1
                 //Checkar se existe flor na casa em que peca ficou - se sim jogador joga again
                 if(tabuleiro.CheckFlower(xFinalPecaMove, yFinalPecaMove))
                 {
-                    Console.WriteLine("Estás numa casa segura e podes jogar novamente!");
+                    Console.WriteLine("Estás numa casa segura e podes jogar novamente! \n");
                 }
                 else //se nao, troca turno
                 {
@@ -229,7 +231,7 @@ namespace Projeto1
             Random numAleatorio = new Random();
             int valorInteiro = numAleatorio.Next(0,5);
 
-            Console.WriteLine($" O numero é {valorInteiro}");
+            Console.WriteLine($" Calhou-te ... {valorInteiro} ! \n");
             return valorInteiro;
         }
     }
