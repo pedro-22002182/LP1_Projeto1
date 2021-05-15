@@ -2,6 +2,10 @@
 
 namespace Projeto1
 {
+
+    /// <summary>
+    /// Classe responsável por ter o game loop do jogo e ligar todos os componentes
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -18,7 +22,7 @@ namespace Projeto1
             //Game loop
             bool jogoAcabou = false;
 
-            //responsavel ver turno, se true é playerA a jogar, se false é o playerB
+            //responsavel pelos turnos, se true é playerA a jogar, se false é o playerB
             bool turno = true;
 
             //Introdução loop
@@ -26,23 +30,27 @@ namespace Projeto1
 
             graficos.Menu();
 
+            //loop de introdução ao jogo
             while(introducaoJogo == true)
             {
-                
                 string escolha = Console.ReadLine();
 
+                //inciai jogo
                 if(escolha == "1")
                 {
                     introducaoJogo = false;
                 }
+                //regras
                 else if(escolha == "2")
                 {
                     graficos.Regras();
                 }
+                //controles
                 else if(escolha == "3")
                 {
                     graficos.Controles();
                 }
+                //sair jogo
                 else if(escolha == "4")
                 {
                     System.Environment.Exit(1);
@@ -51,7 +59,7 @@ namespace Projeto1
             
 
             
-
+            //Game Loop do jogo
             while (jogoAcabou == false)
             {
                 //mostrar tabuleiro
@@ -70,11 +78,15 @@ namespace Projeto1
                 Console.ReadLine();
                 int numeroPassos = lancarDados();
 
-
+                //verificar a posicao final da peça apos jogada
                 int xFinalPecaMove = -1;
                 int yFinalPecaMove = -1;
+
+                //loop para verificar se jogador coloca input correto
                 bool acaoCorreta = false;
 
+
+                //caso tenha calhado 0 nos dados, o jogador não entra no loop de input
                 if(numeroPassos == 0)
                 {
                     Console.WriteLine("Opps tives-te azar..");
@@ -82,20 +94,21 @@ namespace Projeto1
                 }
                 
             
-
+                //loop de input de escolha movimento ao jogador
                 while(acaoCorreta == false)
                 {
                     //pedir acao ao jogador
                     Console.WriteLine("\nEscolhe a peça a ser mexida!");
                     Console.WriteLine("..(3 - ver controles)..");
-
                     string escolha = Console.ReadLine();
                     char[] escolhaArray = escolha.ToCharArray();
 
+                    //ver controles
                     if(escolha == "3")
                     {
                         graficos.Controles();
                     }
+                    //sair jogo
                     else if(escolha == "4")
                     {
                         System.Environment.Exit(1);
@@ -103,9 +116,9 @@ namespace Projeto1
                     //caso mexer peca na base
                     else if(escolha == " ")
                     {
+                        //verifica se existe peca no local
                         if(tabuleiro.getMap()[0,4] == 1 || tabuleiro.getMap()[0,4] == 2)
                         {
-
                             Peca pecaMexer;
 
                             if(turno == true)
@@ -113,20 +126,23 @@ namespace Projeto1
                             else
                                 pecaMexer = tabuleiro.pegaPeca(2,4);
 
+                            //obtem coords da peça
                             int posX = pecaMexer.GetPos()[0];
                             int posY = pecaMexer.GetPos()[1];
 
+                            //move a peca
                             if(turno == true)
                                 tabuleiro.moverPeca(pecaMexer, numeroPassos, playerA); 
                             else
                                 tabuleiro.moverPeca(pecaMexer, numeroPassos, playerB); 
 
-                            //!!!! VERIFICAR SE O MOVE É POSSSIVEL!!!
+
+                            //se as coords da peça se mantiverem, então o movimento nao foi possivel e retorna-se ciclo input
                             if(posX == pecaMexer.GetPos()[0] && posY == pecaMexer.GetPos()[1])
                             {
                                 Console.WriteLine("Posição Inválida \n");
                             }
-                            //caso contrario dizer e voltar ciclo
+                            //caso contrario,a peça moveu e sai-se do ciclo input
                             else
                             {
                                 acaoCorreta = true;
@@ -135,9 +151,10 @@ namespace Projeto1
                             }
                         }
                     }
+                    //caso o array do input seja maior que 3 (para nao dar erros)
                     else if(escolhaArray.Length >= 3) 
                     {
-                        //verificar se o input dado tem dois numeros like "1_2"
+                        //verificar se o input dado tem dois numeros ex "1_2"
                         bool primIsNumero = false;
                         bool segIsNumero = false;
 
@@ -165,7 +182,6 @@ namespace Projeto1
                             //verificar se existe peca na posicao
                             if(tabuleiro.pegaPeca(coordX, coordY) != null)
                             {
-                               
                                 Peca pecaMexer = tabuleiro.pegaPeca(coordX, coordY);
 
                                 //verficar se peca pertence ao atual jogador
@@ -229,7 +245,7 @@ namespace Projeto1
                     jogoAcabou = true;
                 }
 
-                //Checkar se existe flor na casa em que peca ficou - se sim jogador joga again
+                //Checkar se existe flor na casa em que a peca ficou - se sim jogador joga again
                 if(tabuleiro.CheckFlower(xFinalPecaMove, yFinalPecaMove))
                 {
                     Console.WriteLine("\n Estás numa casa segura e podes jogar novamente! \n");

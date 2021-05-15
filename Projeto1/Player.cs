@@ -1,11 +1,14 @@
 namespace Projeto1
 {
+
+    /// <summary>
+    /// Classe responsável por simulador um jogador
+    /// </summary>
     public class Player
     {
-
         private int score;
 
-        //Função para o score
+        //Construir player
         public Player()
         {
             this.score = 0;

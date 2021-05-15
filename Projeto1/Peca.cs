@@ -3,11 +3,15 @@ using System;
 namespace Projeto1
 {
 
+    /// <summary>
+    /// Classe responsável por controlar características e métodos de uma peça no tabuleiro
+    /// </summary>
     public class Peca
     {
         private int posX, posY;
 
-        private bool player; //se true então pertecen ao jogador A, se false pertence B
+        //se true então pertecen ao jogador A, se false pertence B
+        private bool player; 
 
         
         public Peca(bool player)
@@ -25,11 +29,12 @@ namespace Projeto1
             }
             
 
-            //pertence ao jogadorA?? B?
+            //pertence ao jogadorA? B?
             this.player = player;
         }
         
-        //Move a peça em direçao x y + ou - dependendo da casa em que passar
+
+        //Defenie a posição da peça
         public void SetPos(int novoX, int novoY)
         {
             posX = novoX;
@@ -37,20 +42,22 @@ namespace Projeto1
         }
             
 
-
+        //obtem as coordenadas da peça
         public int[] GetPos()
         {
             int[] pos = new int[]{posX, posY};
             return pos;
         }
 
+        //verficar a qual jogador pertence
         public bool GetPlayer()
         {
             return player;
         }
 
 
-        public void ComerPeça()
+        //simula a peça ser comida, resetando as coordenadas da peça,
+        public void serComida()
         {
             if(player == true)
             {
@@ -64,11 +71,12 @@ namespace Projeto1
             }
         }
 
-    
+
+        //devolve a suposta posição da peça apos dar x passos
         public int[] GetPreviewsPos(int passos, Player jogador)
         {
 
-            //se já tiverem feito ponto
+            //se a peça já tiver feito ponto ignora-se funcao
             if(posX == 0 && posY == 5 || posX == 2 && posY == 5)
             {
                 int[] pecaPonto = new int[]{posX, posY};
@@ -105,7 +113,7 @@ namespace Projeto1
                     //check vitoria Peca
                     if(xnovo == 0 && ynovo == 5)
                     {
-                        //ponto DO
+                        //caso jã não haja mais passos, a peça faz ponto
                         if(i == 1)
                         {
                             jogador.plusPontos();
@@ -146,7 +154,7 @@ namespace Projeto1
                     //check vitoria Peca
                     if(xnovo == 2 && ynovo == 5)
                     {
-                        //ponto DO
+                        //caso jã não haja mais passos, a peça faz ponto
                         if(i == 1)
                         {
                             jogador.plusPontos();
