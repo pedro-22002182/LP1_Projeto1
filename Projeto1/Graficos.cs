@@ -73,7 +73,7 @@ namespace Projeto1
             Console.WriteLine(" - Consoante o valor calhado terás de escolher a peça a ser mexida;");
             Console.WriteLine(" - Para tal, poderás colocar as coordenas da casa onde está uma peça tua (ex: 1_2)");
             Console.WriteLine(" - Ou podes colocar apenas um espaço para mexer instantaneamente uma peca da base!");
-            Console.WriteLine(" - Identificação das peças:\n* - representa uma casa com flor\n1 - representa uma casa com uma peça do Player A\n2 - representa uma casa com uma peça do Player B\n");
+            Console.WriteLine(" - Identificação das peças:\n       * - representa uma casa com flor\n       1 - representa uma casa com uma peça do Player A\n       2 - representa uma casa com uma peça do Player B\n");
         }
     }
 
