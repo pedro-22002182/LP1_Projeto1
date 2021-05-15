@@ -30,7 +30,7 @@ namespace Projeto1
                     {
                         Console.Write(" ");
                     } 
-                    //Flwoer Tiles
+                    //Casas com flor
                     else if(tabuleiro.getMap()[x,y] == 3) 
                     {
                         Console.Write("*");
@@ -47,25 +47,28 @@ namespace Projeto1
             Console.WriteLine();
         }
 
+        //Mostrar o Score
         public void showScore()
         {
             Console.WriteLine("PlayerA Score: " + playerA.getScore() + "                 PlayerB Score: " + playerB.getScore());
         }
 
+        //Imprimir Menu
         public void Menu()
         {
             Console.WriteLine("Bem vindo ao jogo Royal Game Of Ur\n (1)---------Iniciar Novo Jogo \n (2)---------Regras \n (3)---------Controles \n (4)---------Quit");
             Console.WriteLine();
         }
 
-
+        //Imprimir Regras
         public void Regras()
         {
             Console.WriteLine("REGRAS:");
             Console.WriteLine(" - O jogo Royal Game of Ur é jogado num tabuleiro 3 por 8.\n - O jogo é jogado por dois jogadores, jogadorA e jogadorB, onde cada um possui 7 peças.\n - O objectivo de cada jogador é conseguir fazer com que todas as suas peças cheguem ao fim do tabuleiro.\n - A cada turno, o jogador lança 1 dado numerado de 0 a 4.\n - O jogador avança uma peça, ou mete em jogo uma nova peça, e avança o número de espaços que este obteve no lançamento dos dados.\n - Para chegar a peça efetuar um ponto e chegar ao fim do tabuleiro, o jogador tem que obter exatamente o mesmo valor de espaços em falta nos dados.");
             Console.WriteLine();
         }
-
+        
+        //Imprimir Controles
         public void Controles()
         {
             Console.WriteLine("CONTROLES:");

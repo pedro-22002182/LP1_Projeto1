@@ -6,7 +6,7 @@ namespace Projeto1
     {
         static void Main(string[] args)
         {
-            //creates board
+            //criar tabuleiro
             Tabuleiro tabuleiro = new Tabuleiro();
 
             //cria dois jogadores e chama graficos com info tabuleiro e players A e B
@@ -21,7 +21,7 @@ namespace Projeto1
             //responsavel ver turno, se true é playerA a jogar, se false é o playerB
             bool turno = true;
 
-            //Introducao loop
+            //Introdução loop
             bool introducaoJogo = true;
 
             graficos.Menu();
@@ -243,6 +243,7 @@ namespace Projeto1
             }
         }
 
+        // Roll dados
         static int lancarDados()
         {
             Random numAleatorio = new Random();

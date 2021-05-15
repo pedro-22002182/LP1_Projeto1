@@ -29,7 +29,7 @@ namespace Projeto1
             this.player = player;
         }
         
-        //TL;DR: move a peça em direçao x y + ou - dependendo da casa em que passar
+        //Move a peça em direçao x y + ou - dependendo da casa em que passar
         public void SetPos(int novoX, int novoY)
         {
             posX = novoX;
@@ -64,7 +64,7 @@ namespace Projeto1
             }
         }
 
-
+    
         public int[] GetPreviewsPos(int passos, Player jogador)
         {
 

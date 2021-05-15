@@ -8,6 +8,7 @@ namespace Projeto1
 
         private Peca[] pecas;
 
+        // Nesta funçâo criamos o tabuleiro e as peças
         public Tabuleiro()
         {
             this.tabuleiro = new int [3,8];
@@ -29,7 +30,8 @@ namespace Projeto1
 
             atualizarMap();
         }
-
+        //Aqui pegamos as coordenadas da peça, o numero calhado nos dados e a quem pertence a peça
+        // para fazer o movimento da mesma
         public void moverPeca (Peca peca,int passos, Player jogador) 
         {
             
@@ -65,7 +67,7 @@ namespace Projeto1
 
         }
         
-
+        // Aqui estabeleçemos as coordenadas que têm uma flor
         public bool CheckFlower(int x, int y)
         {
             if(x == 0 && y == 0)
@@ -97,6 +99,7 @@ namespace Projeto1
             return tabuleiro;
         }
 
+        //Pegar coordenadas da peça, se nao existir return null
         public Peca pegaPeca(int x, int y)
         {
             for(int i = 0; i < pecas.Length; i++)
@@ -146,6 +149,7 @@ namespace Projeto1
             }
         }       
         
+        //Verificar as casas vazias
         public bool checkCasasVazias(int x, int y)
         {
             if((x == 0 && y == 4) || (x == 0 && y == 5) || (x == 2 && y == 4) || (x == 2 && y == 5))
