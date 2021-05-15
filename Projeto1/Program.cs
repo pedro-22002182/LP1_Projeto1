@@ -87,7 +87,7 @@ namespace Projeto1
                 {
                     //pedir acao ao jogador
                     Console.WriteLine("\nEscolhe a peça a ser mexida!");
-                    Console.WriteLine("..(3 - para ver controles)..");
+                    Console.WriteLine("..(3 - ver controles)..");
 
                     string escolha = Console.ReadLine();
                     char[] escolhaArray = escolha.ToCharArray();
