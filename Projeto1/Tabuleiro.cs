@@ -32,9 +32,12 @@ namespace Projeto1
 
         public void moverPeca (Peca peca,int passos, Player jogador) 
         {
-
-            int xnovo = peca.GetPreviewsPos(passos, jogador)[0];
-            int ynovo = peca.GetPreviewsPos(passos, jogador)[1];
+            
+            int xnovo , ynovo;
+            int[] valores = peca.GetPreviewsPos(passos, jogador);
+            
+            xnovo = valores[0];
+            ynovo = valores[1];
 
         
             if(pegaPeca(xnovo, ynovo) == null)
