@@ -21,7 +21,7 @@ A classe Graficos, é responsável pelos prints principais do jogo, desde mostra
 Para finalizar, existe a classe Program que é responsável por juntar as classes todas e possuir o game loop do jogo. Para tal, existe um loop inicial, onde o jogador permanece no menu e quando faz o input certo entra no loop do jogo. Neste loop basicamente é mostrado sempre o tabuleiro e os pontos de cada jogador e, à vez, cada jogador joga, lançando os dados (função da classe program) e mexendo a peça pretendida.
 
 
-![UML](https://ibb.co/3B8x05g.png)
+[UML](uml.png)
 
 ##### Referencias
 Não sentimos necessidade de recorrer a referências externas, como tal, apenas fomos discutindo entre nós diferentes maneiras de obter os resultados pretendidos, e de resolver problemas e bugs que tivemos durante o processo.
